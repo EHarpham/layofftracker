@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { fetchAirtableData } from '../server/airtable';
 
 export const config = {
   maxDuration: 60,
@@ -7,6 +6,7 @@ export const config = {
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
+    const { fetchAirtableData } = await import('../server/airtable.js');
     const refreshParam = req.query.refresh;
     const bypass = refreshParam === '1' || (Array.isArray(refreshParam) && refreshParam[0] === '1');
     const records = await fetchAirtableData(bypass);
