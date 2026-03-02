@@ -148,7 +148,7 @@ export async function fetchAirtableData(
     throw new Error(`readSharedViewData returned ${dataRes.status}: ${body}`);
   }
 
-  const payload: AirtableResponse = await dataRes.json();
+  const payload = (await dataRes.json()) as AirtableResponse;
   if (payload.msg !== 'SUCCESS') throw new Error(`Airtable msg: ${payload.msg}`);
 
   // ------ Step 4: Build choice maps for select fields ------
