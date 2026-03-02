@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --c-bg-page:         #0B1220;
+  --c-bg-widget:       #0E1626;
+  --c-bg-header:       #09101D;
+  --c-bg-card:         #121C2E;
+  --c-bg-card-hover:   #162236;
+  --c-bg-elevated:     #172338;
+  --c-border:          #1E2D45;
+  --c-border-subtle:   #142030;
+  --c-accent:          #4D8EFF;
+  --c-accent-bg:       rgba(77, 142, 255, 0.10);
+  --c-accent-border:   rgba(77, 142, 255, 0.20);
+  --c-text-primary:    #C8D8F0;
+  --c-text-secondary:  #4A6A8A;
+  --c-text-muted:      #2A3F5A;
+  --c-green:           #3ECF8E;
+  --c-green-bg:        rgba(62, 207, 142, 0.08);
+  --c-amber:           #D4A043;
+  --c-amber-bg:        rgba(212, 160, 67, 0.08);
+  --c-red:             #C25858;
+  --c-red-bg:          rgba(194, 88, 88, 0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--c-bg-page);
+  color: var(--c-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Surface card ── */
+.surface {
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  transition: background-color 0.12s ease;
+}
+.surface-hover:hover { background: var(--c-bg-card-hover); }
+
+/* ── Terminal input ── */
+.term-input {
+  width: 100%;
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--c-text-primary);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+.term-input::placeholder { color: var(--c-text-muted); }
+.term-input:focus { border-color: var(--c-accent); }
+
+/* ── Tab button ── */
+.tab-btn {
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--c-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.12s, color 0.12s;
+}
+.tab-btn:hover {
+  background: var(--c-accent-bg);
+  color: var(--c-text-primary);
+}
+.tab-btn.active {
+  background: rgba(77, 142, 255, 0.14);
+  color: var(--c-accent);
+}
+
+/* ── Table row hover ── */
+.tr-row:hover td { background: var(--c-bg-card-hover); }
+
+/* ── Icon button ── */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--c-text-secondary);
+  cursor: pointer;
+  transition: background-color 0.12s, color 0.12s;
+  font-size: 15px;
+}
+.icon-btn:hover {
+  background: var(--c-accent-bg);
+  color: var(--c-text-primary);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--c-bg-page); }
+::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-text-muted); }
