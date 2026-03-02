@@ -41,7 +41,7 @@ function PctBadge({ pct }: { pct: number }) {
       : ['var(--c-green-bg)', 'var(--c-green)'];
   return (
     <span
-      className="inline-block rounded-full px-2 py-0.5 text-[11px] font-semibold font-mono"
+      className="inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold font-mono"
       style={{ background: bg, color }}
     >
       {pct}%
@@ -86,8 +86,8 @@ export function EventsTable({ data, initialFilter = '' }: EventsTableProps) {
   const thStyle: React.CSSProperties = {
     color: 'var(--c-text-secondary)',
     background: 'var(--c-bg-header)',
-    padding: '10px 14px',
-    fontSize: 10,
+    padding: '7px 10px',
+    fontSize: 9,
     fontWeight: 600,
     textTransform: 'uppercase',
     letterSpacing: '0.08em',
@@ -98,8 +98,8 @@ export function EventsTable({ data, initialFilter = '' }: EventsTableProps) {
   };
 
   const tdStyle: React.CSSProperties = {
-    padding: '9px 14px',
-    fontSize: 13,
+    padding: '6px 10px',
+    fontSize: 11,
     borderBottom: '1px solid var(--c-border-subtle)',
     color: 'var(--c-text-secondary)',
     whiteSpace: 'nowrap',
@@ -119,9 +119,9 @@ export function EventsTable({ data, initialFilter = '' }: EventsTableProps) {
       {/* Table */}
       <div
         className="overflow-x-auto"
-        style={{ border: '1px solid var(--c-border)', borderRadius: 10, overflow: 'hidden' }}
+        style={{ border: '1px solid var(--c-border)', borderRadius: 10, overflowX: 'auto', overflowY: 'hidden' }}
       >
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <table style={{ minWidth: 700, width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
               {COLS.map((col) => (
@@ -163,7 +163,7 @@ export function EventsTable({ data, initialFilter = '' }: EventsTableProps) {
                       href={e.source}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: 'var(--c-accent)', textDecoration: 'none', fontSize: 12 }}
+                      style={{ color: 'var(--c-accent)', textDecoration: 'none', fontSize: 10 }}
                       onMouseEnter={(ev) => (ev.currentTarget.style.textDecoration = 'underline')}
                       onMouseLeave={(ev) => (ev.currentTarget.style.textDecoration = 'none')}
                     >

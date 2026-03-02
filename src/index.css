@@ -49,8 +49,8 @@ body {
   background: var(--c-bg-card);
   border: 1px solid var(--c-border);
   border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 13px;
+  padding: 6px 12px;
+  font-size: 11px;
   color: var(--c-text-primary);
   outline: none;
   font-family: inherit;
